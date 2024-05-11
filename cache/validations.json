@@ -1,0 +1,763 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/Lock.sol:Lock": {
+        "src": "contracts/Lock.sol:7",
+        "version": {
+          "withMetadata": "15a63a6c83549a214a1f2105c736b4936f43510eabdde388b659625c2e6553b8",
+          "withoutMetadata": "51885127bc5ac46c1fff611bf33a2961e4740613abaaa720e7012d78eee61474",
+          "linkedWithoutMetadata": "51885127bc5ac46c1fff611bf33a2961e4740613abaaa720e7012d78eee61474"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(uint256)",
+          "withdraw()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Lock",
+            "src": "contracts/Lock.sol:13"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "unlockTime",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "Lock",
+              "src": "contracts/Lock.sol:8"
+            },
+            {
+              "label": "owner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address_payable",
+              "contract": "Lock",
+              "src": "contracts/Lock.sol:9"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable",
+              "numberOfBytes": "20"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.0"
+      }
+    },
+    {
+      "contracts/Initializable.sol:Initializable": {
+        "src": "contracts/Initializable.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_initialized",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "Initializable",
+              "src": "contracts/Initializable.sol:5"
+            }
+          ],
+          "types": {
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.0"
+      },
+      "contracts/Oracle.sol:Oracle": {
+        "src": "contracts/Oracle.sol:6",
+        "version": {
+          "withMetadata": "fcc8217e76a8acdf74d555d28eb9c80b971a2b3cf5a1d2c7e2037be20445e5f2",
+          "withoutMetadata": "f2df4e70e1b543d223769011efa1a71899635aa90d2bc628d9a0d169852b693d",
+          "linkedWithoutMetadata": "f2df4e70e1b543d223769011efa1a71899635aa90d2bc628d9a0d169852b693d"
+        },
+        "inherit": [
+          "contracts/OwnableUpgradeable.sol:OwnableUpgradeable",
+          "contracts/Initializable.sol:Initializable"
+        ],
+        "libraries": [],
+        "methods": [
+          "initialize(address)",
+          "setProposalFee(uint256)",
+          "setPriceRetrievalFee(uint256)",
+          "setMinStake(uint256)",
+          "setRequestFee(uint256)",
+          "setMaxMembers(uint256)",
+          "joinDAO()",
+          "leaveDAO(uint256)",
+          "getPriceId(string)",
+          "updatePrice(string,uint256)",
+          "getPrice(bytes32)",
+          "openProposal(string)",
+          "distributeFees()",
+          "addStake()",
+          "voteOnProposal(bytes32,bool)",
+          "withdraw(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_initialized",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "Initializable",
+              "src": "contracts/Initializable.sol:5"
+            },
+            {
+              "label": "_owner",
+              "offset": 1,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "OwnableUpgradeable",
+              "src": "contracts/OwnableUpgradeable.sol:7"
+            },
+            {
+              "label": "MIN_STAKE",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:7"
+            },
+            {
+              "label": "MAX_MEMBERS",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:8"
+            },
+            {
+              "label": "PROPOSAL_FEE",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:9"
+            },
+            {
+              "label": "REQUEST_FEE",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:10"
+            },
+            {
+              "label": "PRICE_RETRIEVAL_FEE",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:11"
+            },
+            {
+              "label": "stakes",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:13"
+            },
+            {
+              "label": "daoMembers",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:14"
+            },
+            {
+              "label": "totalProposalFeesCollected",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:16"
+            },
+            {
+              "label": "totalRequestFeesCollected",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:17"
+            },
+            {
+              "label": "symbolToPriceId",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_mapping(t_string_memory_ptr,t_bytes32)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:19"
+            },
+            {
+              "label": "prices",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_mapping(t_bytes32,t_uint256)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:20"
+            },
+            {
+              "label": "priceUpdated",
+              "offset": 0,
+              "slot": "12",
+              "type": "t_mapping(t_bytes32,t_bool)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:21"
+            },
+            {
+              "label": "proposals",
+              "offset": 0,
+              "slot": "13",
+              "type": "t_mapping(t_bytes32,t_struct(Proposal)144_storage)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes32": {
+              "label": "bytes32",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_bytes32,t_bool)": {
+              "label": "mapping(bytes32 => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_bytes32,t_struct(Proposal)144_storage)": {
+              "label": "mapping(bytes32 => struct Oracle.Proposal)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_bytes32,t_uint256)": {
+              "label": "mapping(bytes32 => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_string_memory_ptr,t_bytes32)": {
+              "label": "mapping(string => bytes32)",
+              "numberOfBytes": "32"
+            },
+            "t_string_memory_ptr": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Proposal)144_storage": {
+              "label": "struct Oracle.Proposal",
+              "members": [
+                {
+                  "label": "description",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "opener",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "voteCount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "votes",
+                  "type": "t_mapping(t_address,t_bool)",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.0"
+      },
+      "contracts/OwnableUpgradeable.sol:OwnableUpgradeable": {
+        "src": "contracts/OwnableUpgradeable.sol:6",
+        "inherit": [
+          "contracts/Initializable.sol:Initializable"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_initialized",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "Initializable",
+              "src": "contracts/Initializable.sol:5"
+            },
+            {
+              "label": "_owner",
+              "offset": 1,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "OwnableUpgradeable",
+              "src": "contracts/OwnableUpgradeable.sol:7"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.0"
+      }
+    },
+    {
+      "contracts/Initializable.sol:Initializable": {
+        "src": "contracts/Initializable.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_initialized",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "Initializable",
+              "src": "contracts/Initializable.sol:5"
+            }
+          ],
+          "types": {
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.0"
+      },
+      "contracts/Oracle.sol:Oracle": {
+        "src": "contracts/Oracle.sol:6",
+        "version": {
+          "withMetadata": "d11a732841a3ea77c2295e30b0bc32ac702d39072fde80f26fd4a172c08df4ea",
+          "withoutMetadata": "a4ec480d3144272ee18da1b9e2133a476011e3cb4cfc1be3e6bfd5c3759915b5",
+          "linkedWithoutMetadata": "a4ec480d3144272ee18da1b9e2133a476011e3cb4cfc1be3e6bfd5c3759915b5"
+        },
+        "inherit": [
+          "contracts/OwnableUpgradeable.sol:OwnableUpgradeable",
+          "contracts/Initializable.sol:Initializable"
+        ],
+        "libraries": [],
+        "methods": [
+          "initialize(address)",
+          "setProposalFee(uint256)",
+          "setPriceRetrievalFee(uint256)",
+          "setMinStake(uint256)",
+          "setRequestFee(uint256)",
+          "setMaxMembers(uint256)",
+          "joinDAO()",
+          "leaveDAO(uint256)",
+          "getPriceId(string)",
+          "updatePrice(string,uint256)",
+          "getPrice(bytes32)",
+          "openProposal(string)",
+          "distributeFees()",
+          "addStake()",
+          "voteOnProposal(bytes32,bool)",
+          "withdraw(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "MIN_STAKE",
+            "src": "contracts/Oracle.sol:7"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "MAX_MEMBERS",
+            "src": "contracts/Oracle.sol:8"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "PROPOSAL_FEE",
+            "src": "contracts/Oracle.sol:9"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "REQUEST_FEE",
+            "src": "contracts/Oracle.sol:10"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "PRICE_RETRIEVAL_FEE",
+            "src": "contracts/Oracle.sol:11"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "totalProposalFeesCollected",
+            "src": "contracts/Oracle.sol:16"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "totalRequestFeesCollected",
+            "src": "contracts/Oracle.sol:17"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_initialized",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "Initializable",
+              "src": "contracts/Initializable.sol:5"
+            },
+            {
+              "label": "_owner",
+              "offset": 1,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "OwnableUpgradeable",
+              "src": "contracts/OwnableUpgradeable.sol:7"
+            },
+            {
+              "label": "MIN_STAKE",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:7"
+            },
+            {
+              "label": "MAX_MEMBERS",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:8"
+            },
+            {
+              "label": "PROPOSAL_FEE",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:9"
+            },
+            {
+              "label": "REQUEST_FEE",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:10"
+            },
+            {
+              "label": "PRICE_RETRIEVAL_FEE",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:11"
+            },
+            {
+              "label": "stakes",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:13"
+            },
+            {
+              "label": "daoMembers",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:14"
+            },
+            {
+              "label": "totalProposalFeesCollected",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:16"
+            },
+            {
+              "label": "totalRequestFeesCollected",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_uint256",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:17"
+            },
+            {
+              "label": "symbolToPriceId",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_mapping(t_string_memory_ptr,t_bytes32)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:19"
+            },
+            {
+              "label": "prices",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_mapping(t_bytes32,t_uint256)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:20"
+            },
+            {
+              "label": "priceUpdated",
+              "offset": 0,
+              "slot": "12",
+              "type": "t_mapping(t_bytes32,t_bool)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:21"
+            },
+            {
+              "label": "randomNumbers",
+              "offset": 0,
+              "slot": "13",
+              "type": "t_mapping(t_bytes32,t_uint256)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:23"
+            },
+            {
+              "label": "randomNumberAvailable",
+              "offset": 0,
+              "slot": "14",
+              "type": "t_mapping(t_bytes32,t_bool)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:24"
+            },
+            {
+              "label": "proposals",
+              "offset": 0,
+              "slot": "15",
+              "type": "t_mapping(t_bytes32,t_struct(Proposal)159_storage)",
+              "contract": "Oracle",
+              "src": "contracts/Oracle.sol:25"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes32": {
+              "label": "bytes32",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_bytes32,t_bool)": {
+              "label": "mapping(bytes32 => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_bytes32,t_struct(Proposal)159_storage)": {
+              "label": "mapping(bytes32 => struct Oracle.Proposal)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_bytes32,t_uint256)": {
+              "label": "mapping(bytes32 => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_string_memory_ptr,t_bytes32)": {
+              "label": "mapping(string => bytes32)",
+              "numberOfBytes": "32"
+            },
+            "t_string_memory_ptr": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Proposal)159_storage": {
+              "label": "struct Oracle.Proposal",
+              "members": [
+                {
+                  "label": "description",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "opener",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "voteCount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "votes",
+                  "type": "t_mapping(t_address,t_bool)",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.0"
+      },
+      "contracts/OwnableUpgradeable.sol:OwnableUpgradeable": {
+        "src": "contracts/OwnableUpgradeable.sol:6",
+        "inherit": [
+          "contracts/Initializable.sol:Initializable"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_initialized",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "Initializable",
+              "src": "contracts/Initializable.sol:5"
+            },
+            {
+              "label": "_owner",
+              "offset": 1,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "OwnableUpgradeable",
+              "src": "contracts/OwnableUpgradeable.sol:7"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.0"
+      }
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x79bEfB1Fe925Be5750E50f5F55A853ACD112b272",
+      "txHash": "0xf892cd8b0361ed739c9cf2e877961cf7e2ed81785fe269c372989f25e50a9c5f",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xA790b58C5cfD22a64b8BE35B071c312457570103",
+      "txHash": "0xd8da1249f73fb90bc7edda99296245399fc0ac595ffe406591434f7e9a8fc965",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "f2df4e70e1b543d223769011efa1a71899635aa90d2bc628d9a0d169852b693d": {
+      "address": "0xA1bB5791dC0d6939Bf05AEbCB57DBaeBd46684a4",
+      "txHash": "0xf91004007e9e044a97145c4ae14b041a4e6fec218e5f3b693f761d256f526f83",
+      "layout": {
+        "solcVersion": "0.8.0",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "contracts/Initializable.sol:5"
+          },
+          {
+            "label": "_owner",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "contracts/OwnableUpgradeable.sol:7"
+          },
+          {
+            "label": "MIN_STAKE",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:7"
+          },
+          {
+            "label": "MAX_MEMBERS",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:8"
+          },
+          {
+            "label": "PROPOSAL_FEE",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:9"
+          },
+          {
+            "label": "REQUEST_FEE",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:10"
+          },
+          {
+            "label": "PRICE_RETRIEVAL_FEE",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_uint256",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:11"
+          },
+          {
+            "label": "stakes",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:13"
+          },
+          {
+            "label": "daoMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:14"
+          },
+          {
+            "label": "totalProposalFeesCollected",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_uint256",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:16"
+          },
+          {
+            "label": "totalRequestFeesCollected",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_uint256",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:17"
+          },
+          {
+            "label": "symbolToPriceId",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_string_memory_ptr,t_bytes32)",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:19"
+          },
+          {
+            "label": "prices",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:20"
+          },
+          {
+            "label": "priceUpdated",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_bytes32,t_bool)",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:21"
+          },
+          {
+            "label": "proposals",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_bytes32,t_struct(Proposal)144_storage)",
+            "contract": "Oracle",
+            "src": "contracts/Oracle.sol:23"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_bool)": {
+            "label": "mapping(bytes32 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(Proposal)144_storage)": {
+            "label": "mapping(bytes32 => struct Oracle.Proposal)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_bytes32)": {
+            "label": "mapping(string => bytes32)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Proposal)144_storage": {
+            "label": "struct Oracle.Proposal",
+            "members": [
+              {
+                "label": "description",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "opener",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "voteCount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "votes",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {}
+      }
+    }
+  }
+}
